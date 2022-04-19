@@ -20,8 +20,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(6px + 2vmin);
   color: white;
+  padding-bottom: 15px;
+}
+
+.App-footer {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  border-top: #61dafb 0.5px dashed;
 }
 
 .App-link {
