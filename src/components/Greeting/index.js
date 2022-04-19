@@ -1,3 +1,3 @@
 // forward all
-export * from "./Gretting"
-export {default} from "./Gretting"
+export * from "./Greeting"
+export {default} from "./Greeting"

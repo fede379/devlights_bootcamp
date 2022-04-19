@@ -9,16 +9,16 @@ export default function Greeting({ name, ...props }) {
 
   useEffect(() => {
     console.log(`name: ${name}`);
-    console.log(`counter: ${counter}`);
     // a modo de prueba (es opcional)
     return () => {
       //desuscribo de cualquier evento
+      //aqui llevo a cabo cualquier tipo de sanitizacion del efecto
     };
-  }, [name, counter]);
+  }, [name]);
 
-//   useEffect(() => {
-//     console.log(`counter: ${counter}`);
-//   }, [counter]);
+  useEffect(() => {
+    console.log(`counter: ${counter}`);
+  }, [counter]);
 
   useEffect(() => {
     console.log("Greeting did mount");
