@@ -1,0 +1,83 @@
+.LoginForm {
+  width: 420px;
+}
+
+.LoginFormTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-block: 0;
+  margin-bottom: 10px;
+}
+
+.LoginFormDescription {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin-block: 0;
+  color: #8692A6;
+  margin-bottom: 40px;
+}
+
+.LoginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.LoginFormInputLabel {
+  display: block;
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #696F79;
+  margin-bottom: 14px;
+}
+
+.LoginFormInput {
+  width: 100%;
+  border: 1px solid #8692A6;
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 64px;
+  margin-bottom: 24px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #696F79;
+  padding: 10px;
+}
+
+.LoginFormButton {
+  background: #2C73EB;
+  border-radius: 6px;
+  height: 64px;
+  width: 100%;
+  color: white;
+  border: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.LoginFormError {
+  width: 100%;
+  border: 1px solid #8692A6;
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 64px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: red;
+  padding: 10px;
+  margin-top: 20px;
+}
