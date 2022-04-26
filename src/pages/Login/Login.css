@@ -1,0 +1,20 @@
+.Login {
+  display: flex;
+  height: 100vh;
+  color: white;
+}
+
+.LoginHeroContainer {
+  flex: 1;
+  background-color: #2c73eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginFormContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -5,7 +5,7 @@ import { LoginFormSuccess } from "./LoginFormSuccess";
 
 import "./Login.css";
 
-export function Login() {
+export default function Login() {
   const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged"))
 
   function onSuccess() {
@@ -18,8 +18,12 @@ export function Login() {
         <LoginHero />
       </section>
       <section className="LoginFormContainer">
-        {isLogged === "true" ? <LoginFormSuccess /> : <LoginForm onSuccess={onSuccess} />}
+        {isLogged === "true" ? (
+          <LoginFormSuccess />
+        ) : (
+          <LoginForm onSuccess={onSuccess} />
+        )}
       </section>
     </main>
-  )
+  );
 }

@@ -1,0 +1,14 @@
+.Landing {
+  display: flex;
+  height: 100vh;
+  color: white;
+}
+
+.LandingContainer {
+  flex: 1;
+  background-color: #2C73EB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
