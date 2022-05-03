@@ -1,15 +1,19 @@
-import { useState } from "react";
+
 import { LoginForm } from "./LoginForm";
 import { LoginHero } from "./LoginHero";
-import { LoginFormSuccess } from "./LoginFormSuccess";
+import { useNavigate } from "react-router-dom";
 
 import "./Login.css";
+import { useContext } from "react";
+import { DashboardContext } from "../../App";
 
 export default function Login() {
-  const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged"))
+  const navigate = useNavigate();
+  const { onSuccess } = useContext(DashboardContext);
 
-  function onSuccess() {
-    setIsLogged("true");
+  function onLoginFormSuccess() {
+    onSuccess();
+    navigate("/");
   }
 
   return (
@@ -18,11 +22,7 @@ export default function Login() {
         <LoginHero />
       </section>
       <section className="LoginFormContainer">
-        {isLogged === "true" ? (
-          <LoginFormSuccess />
-        ) : (
-          <LoginForm onSuccess={onSuccess} />
-        )}
+        <LoginForm onSuccess={onLoginFormSuccess} />
       </section>
     </main>
   );

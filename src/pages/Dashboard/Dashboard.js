@@ -1,9 +1,15 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { DashboardContext } from "../../App";
 import { getUsers } from "../../services/users";
+import DashboardHeader from "../DashboardHeader";
+import { UsersTable } from "../UsersTable/UsersTable";
 import "./Dashboard.css";
+
+export const UsersContext = createContext();
 
 function Dashboard() {
   const [users, setUsers] = useState([]);
+  const { isLogged } = useContext(DashboardContext);
 
   async function getData() {
     try {
@@ -21,25 +27,13 @@ function Dashboard() {
   return (
     <main className="Dashboard">
       <section className="DashboardContainer">
-        <h1>Dashboard</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map(({ name, email, phone }, i) => (
-              <tr key={i}>
-                <th>{`${name.last} ${name.first}`}</th>
-                <th>{phone}</th>
-                <th>{email}</th>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <UsersContext.Provider value={{
+          users
+        }}>
+          <DashboardHeader />
+          {String(isLogged)}
+          <UsersTable />
+        </UsersContext.Provider>
       </section>
     </main>
   );

@@ -5,9 +5,11 @@ import "./Landing.css";
 
 export default function Landing() {
   const navigate = useNavigate();
+
   function onClick() {
     navigate("login");
   }
+
   return (
     <main className="Landing">
       <section className="LandingContainer">
