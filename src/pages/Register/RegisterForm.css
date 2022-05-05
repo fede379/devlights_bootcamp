@@ -1,0 +1,96 @@
+.RegisterForm {
+  width: 420px;
+}
+
+.RegisterFormTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-block: 0;
+  margin-bottom: 10px;
+  color: #0e0e0e;
+}
+
+.RegisterFormDescription {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin-block: 0;
+  color: #8692a6;
+  margin-bottom: 40px;
+}
+
+.RegisterFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.RegisterFormInputLabel {
+  display: block;
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #696f79;
+  margin-bottom: 14px;
+}
+
+.RegisterFormInput {
+  width: 100%;
+  border: 1px solid #8692a6;
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 64px;
+  margin-bottom: 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #696f79;
+  padding: 10px;
+}
+
+.RegisterFormButton {
+  background: #2c73eb;
+  border-radius: 6px;
+  height: 64px;
+  width: 100%;
+  color: white;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.RegisterFormError {
+  width: 100%;
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: red 1px solid;
+  height: 64px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: red;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.RegisterFormErrorButton {
+  font-size: 70%;
+}
+
+.RegisterFormErrorMessage {
+  width: 70%;
+}

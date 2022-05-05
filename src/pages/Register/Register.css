@@ -1,0 +1,13 @@
+.Register {
+  display: flex;
+  height: 100vh;
+  color: white;
+}
+
+.RegisterContainer {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

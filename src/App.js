@@ -1,5 +1,5 @@
 import "./App.css";
-import { Landing, Login, NoMatch, Dashboard } from "./pages";
+import { Landing, Login, NoMatch, Dashboard, Register } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
 
@@ -25,17 +25,14 @@ function App() {
         value={{
           onLogout,
           onSuccess,
-          isLogged
+          isLogged,
         }}
       >
         <Routes>
-          <Route
-            path="/"
-            element={isLogged ? <Dashboard /> : <Landing />}
-          />
-          {isLogged ? null : (
-            <Route path="/login" element={<Login />} />
-          )}
+          <Route path="/" element={isLogged ? <Dashboard /> : <Landing />} />
+          {isLogged ? null : <Route path="/login" element={<Login />} />}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/register" element={<Register />} />
           {/* 404 not found / no match */}
           <Route path="*" element={<NoMatch />} />
         </Routes>
