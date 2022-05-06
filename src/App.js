@@ -1,9 +1,7 @@
-import "./App.css";
 import { Landing, Login, NoMatch, Dashboard } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createContext, useState } from "react";
-
-export const DashboardContext = createContext();
+import { useState } from "react";
+import { DashboardProvider } from "./contexts/DashboardContext";
 
 function App() {
   const [isLogged, setIsLogged] = useState(
@@ -21,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <DashboardContext.Provider
+      <DashboardProvider
         value={{
           onLogout,
           onSuccess,
@@ -39,7 +37,7 @@ function App() {
           {/* 404 not found / no match */}
           <Route path="*" element={<NoMatch />} />
         </Routes>
-      </DashboardContext.Provider>
+      </DashboardProvider>
     </BrowserRouter>
   );
 }

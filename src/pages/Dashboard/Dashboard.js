@@ -1,40 +1,33 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { DashboardContext } from "../../App";
-import { getUsers } from "../../services/users";
+import { UsersProvider } from "../../contexts/UsersContext";
+import { useConsole } from "../../hooks/useConsole";
+import { useUsers } from "../../hooks/useUsers";
 import DashboardHeader from "../DashboardHeader";
 import { UsersTable } from "../UsersTable/UsersTable";
-import "./Dashboard.css";
-
-export const UsersContext = createContext();
 
 function Dashboard() {
-  const [users, setUsers] = useState([]);
-  const { isLogged } = useContext(DashboardContext);
-
-  async function getData() {
-    try {
-      const { results } = await getUsers();
-      setUsers(results);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const { users } = useUsers();
+  useConsole("hola");
 
   return (
-    <main className="Dashboard">
-      <section className="DashboardContainer">
-        <UsersContext.Provider value={{
-          users
-        }}>
+    <main className="flex h-screen">
+      <UsersProvider
+        value={{
+          users,
+        }}
+      >
+        <nav className="w-1/5 h-screen bg-[#383F51]">
+          <figure>logo</figure>
+          <ul>
+            <li>home</li>
+          </ul>
+        </nav>
+        <main className="w-4/5 h-screen">
           <DashboardHeader />
-          {String(isLogged)}
-          <UsersTable />
-        </UsersContext.Provider>
-      </section>
+          <section className="flex-1 bg-[#2C73EB] flex flex-col items-center justify-center">
+            <UsersTable />
+          </section>
+        </main>
+      </UsersProvider>
     </main>
   );
 }

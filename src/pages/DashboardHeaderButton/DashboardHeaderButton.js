@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { DashboardContext } from "../../App";
+import { useDashboard } from "../../hooks/useDashboard";
 
 export default function DashboardHeaderButton() {
-  const { onLogout } = useContext(DashboardContext);
+  const { onLogout } = useDashboard();
 
   return <button onClick={onLogout}>Logout</button>;
 }
