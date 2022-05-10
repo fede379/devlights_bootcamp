@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useUsersContext } from "../../hooks/useUsersContext";
 
 export function UsersTable() {
   const { users } = useUsersContext();
+  const navigate = useNavigate();
+
+  function handleClick(id) {
+    return () => {
+      navigate(`/user/${id.value}?query=${id.name}`);
+    }
+  }
 
   return (
     <section className="py-1 bg-blueGray-50">
@@ -33,8 +41,8 @@ export function UsersTable() {
                 </tr>
               </thead>
               <tbody>
-                {users?.map(({ name, email, phone }, i) => (
-                  <tr key={i}>
+                {users?.map(({ name, email, phone, id }, i) => (
+                  <tr key={i} onClick={handleClick(id)}>
                     <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">{`${name.last} ${name.first}`}</th>
                     <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
                       {phone}
