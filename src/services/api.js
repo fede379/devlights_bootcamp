@@ -8,8 +8,15 @@ const API = axios.create({
 // Add a request interceptor
 API.interceptors.request.use(
   function (config) {
+    const token = localStorage.getItem("token");
+
     // aca se agregan todas los headers de auth
     config.headers = { ...config.headers, "X-Auth-Header": "token" };
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
     return config;
   },
   function (error) {

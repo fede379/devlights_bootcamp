@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUsersContext } from "../../hooks/useUsersContext";
+import { Avatar } from "../../components/Avatar";
+import { useUsers } from "../../hooks/useUsers"
 
 export function UsersTable() {
-  const { users } = useUsersContext();
+  const { data: users, isLoading, isError } = useUsers();
   const navigate = useNavigate();
+  if (isLoading) {
+    return <div>Loading..</div>
+  }
+
+  if (isError) {
+    return <div>Hubo un error!</div>
+  }
 
   function handleClick(id) {
     return () => {
@@ -19,7 +28,7 @@ export function UsersTable() {
             <div className="flex flex-wrap items-center">
               <div className="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3 className="font-semibold text-base text-blueGray-700">
-                  Page Visits
+                  Page Visits <Avatar.Large />
                 </h3>
               </div>
             </div>
